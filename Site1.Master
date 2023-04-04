@@ -1,0 +1,141 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="project.Site1" %>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/fontAwesome.css">
+        <link rel="stylesheet" href="css/tooplate-style.css">
+ 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+    <style>
+
+        ::-webkit-input-placeholder { /* Safari, Chrome and Opera */
+  color: whitesmoke;
+}
+
+        .navbar { background-color:#1f3646;; 
+                  border-radius: 0px;
+                  margin-bottom: 0px;
+                  position:fixed;
+                  top:0%;
+                  width:100%;
+                  z-index:1;
+        }
+.navbar .navbar-nav .nav-link { 
+    color: #fff; 
+    padding-right: 30px;
+    font-size:20px;
+}
+
+.navbar-brand {
+    margin-left: -90px;
+    color: #ffe165;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.navbar .navbar-nav .nav-link:hover { 
+    color: #ffe165; 
+
+}
+.navbar .navbar-nav .active > .nav-link 
+{ color: #fbc531; 
+
+}
+
+footer {
+    text-align: center;
+    background-color: #1f3646;
+    padding: 0px 0px;
+
+
+}
+
+ .mine{
+    font-size:28px;
+}
+
+    </style>
+
+
+  <header>
+	<!--- Navbar --->
+	<nav class="navbar navbar-expand-lg">
+		<div class="container">
+			<a class="navbar-brand mine text-white" href="#"><i class="fa fa-plane" ></i>Hawayeein</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nvbCollapse" aria-controls="nvbCollapse">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="nvbCollapse">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item pl-1">
+						<a class="nav-link" href="home.aspx" ><i class="fa fa-home fa-fw mr-1"></i> Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="flight_schedule.aspx"><i class="fa fa-th-list fa-fw mr-1"></i> Schedule</a>
+					</li>
+					<li class="nav-item pl-1">
+						   <% if (Session["isLog"] != null) { %>
+                        <a class="nav-link" href="enter_booking_id.aspx"><i class="fa fa-eye fa-fw mr-1"></i> View Tickets</a>
+                            <% } %>
+					</li>
+					<li class="nav-item pl-1">
+						<a class="nav-link" href="#"><i class="fa fa-phone"></i> Contact</a>
+					</li>
+					<li class="nav-item pl-1">
+						<a class="nav-link" href="sign.aspx"><i class="fa fa-sign-in fa-fw mr-1"></i> Register</a>
+					</li>
+					<li class="nav-item pl-1">
+                        <a class="nav-link" href="log.aspx"><i class="fa fa-user-plus fa-fw mr-1"></i> Login</a>
+						
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!--# Navbar #-->
+	</header>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+        <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="primary-button">
+                        <a href="#" class="scroll-top">Back To Top</a>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <ul class="social-icons">
+                        <li><a href="https://www.facebook.com/tooplate"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-12">
+                    <p>Copyright &copy; 2022 Hawaayein-ARS
+                
+                | Design: <a href="http://www.tooplate.com/view/2093-flight" target="_parent"><em>Flight</em></a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
